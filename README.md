@@ -20,7 +20,7 @@ The study of the dynamic characteristics of the d.c. motor is important because 
 This experiment is designed to obtain the torque-speed characteristics, compute the various parameter and finally determine the transfer function of a d.c. motor.			  
 			  
 <div align="center">
-<img class="img-fluid"  src="./images/dcpanel.png" alt="">
+<img class="img-fluid"  src="./experiment/images/dcpanel.png" alt="">
 <figcaption style="color:blue">Fig1.Panel drawing DC Motor Study</figcaption>
 </div>
 
