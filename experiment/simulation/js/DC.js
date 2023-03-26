@@ -326,7 +326,7 @@ else if(document.getElementById('RL').value != 0 && document.getElementById('cou
 	
 	else if(document.getElementById('RL').value != 0 && document.getElementById('counterchk').value == 2){
 	
-	n =parseFloat(n+c);
+	n =math.add(n,c);
 	}
 	
 	
@@ -358,11 +358,17 @@ Timeconst = parseFloat((J/mul)*1000);
 
 inertia = parseFloat(Timeconst* mul);	
 	
-if(document.getElementById('mon').src.match('./images/on.png')){
+if(document.getElementById('RL').value==0 && document.getElementById('mon').src.match('./images/on.png') && document.getElementById('rr').src.match('./images/on.png') ){
 	
 document.getElementById('motor_tau').value = Timeconst;	
 	
 }
+else if(document.getElementById('RL').value!=0){
+	
+	alert('Go through the instructions properly\n Load should be zero or knob3 should be at zero value');///\n Set ‘RESET’ switch to ‘READY’\nSwitch on the motor');
+	
+}
+
 
 }
 
@@ -391,8 +397,16 @@ step_response();
 ///////////////////////////////////////////////////////////////////////////////Table Creation//////////////////////////////////////////////////////////////////////////////////////
  
  var tabrowindex = 0;
+ var tabrowindex2 = 0;
+ var tabrowindex3 = 0;
+ 
 var arr = [];
+var arr2=[];
+var arr3=[];
+
 var table;
+var table2;
+var table3;
 
 var chart;
 
@@ -430,26 +444,26 @@ function createTable1() {
 function createTable2() {
 
 
-    arr[0] = tabrowindex+1 ;
-    arr[1] = document.getElementById("RL").value;
-    arr[2] = document.getElementById("motor_arm_current").value;
-	arr[3] = parseFloat(document.getElementById("motor_speed").value);
-    arr[4] = parseFloat(parseFloat(document.getElementById("motor_speed").value*2*Math.PI)/60);
-	arr[5] = parseFloat(arr[4]*Kb);
-	arr[6] = parseFloat(arr[5]/arr[4]);
-	arr[7] = parseFloat(Kb*arr[2]*Math.pow(10,-3));
+    arr2[0] = tabrowindex2+1 ;
+    arr2[1] = document.getElementById("RL").value;
+    arr2[2] = document.getElementById("motor_arm_current").value;
+	arr2[3] = parseFloat(document.getElementById("motor_speed").value);
+    arr2[4] = parseFloat(parseFloat(document.getElementById("motor_speed").value*2*Math.PI)/60);
+	arr2[5] = parseFloat(arr2[4]*Kb);
+	arr2[6] = parseFloat(arr2[5]/arr2[4]);
+	arr2[7] = parseFloat(Kb*arr2[2]*Math.pow(10,-3));
 	
-	table = document.getElementById("myTableload");
+	table2 = document.getElementById("myTableload");
         
-    var row = table.insertRow(++tabrowindex);
+    var row = table2.insertRow(++tabrowindex2);
    
-    if (table.rows.length <= 50) {
+    if (table2.rows.length <= 50) {
         
          // Row increment
         for (var q = 0; q < 8; q++) {
 
             var cell = row.insertCell(q);
-            cell.innerHTML = arr[q];
+            cell.innerHTML = arr2[q];
 
     }
 
@@ -465,39 +479,39 @@ function createTable3() {
 	var dataOPPoints=[];
 
 
-    arr[0] = tabrowindex+1 ;
-    arr[1] = document.getElementById("Ea").value;
-    arr[2] = document.getElementById("Eg").value;
-	arr[3] = parseFloat(document.getElementById("motor_speed").value);
-    arr[4] = document.getElementById("Eschk").value;
-	arr[5] = document.getElementById("motor_tau").value;
-	arr[6] = parseFloat((arr[3]*Math.PI)/(arr[1]*30));
+    arr3[0] = tabrowindex3+1 ;
+    arr3[1] = document.getElementById("Ea").value;
+    arr3[2] = document.getElementById("Eg").value;
+	arr3[3] = parseFloat(document.getElementById("motor_speed").value);
+    arr3[4] = document.getElementById("Eschk").value;
+	arr3[5] = document.getElementById("motor_tau").value;
+	arr3[6] = parseFloat((arr3[3]*Math.PI)/(arr3[1]*30));
 	
-	document.getElementById('tfn').value = arr[6];
-	document.getElementById('tfd').value = parseFloat(arr[5]/1000);
+	document.getElementById('tfn').value = arr3[6];
+	document.getElementById('tfd').value = parseFloat(arr3[5]/1000);
 	document.getElementById('motor_inertia').value = inertia;
 	
 	
-	table = document.getElementById("myTablestep");
+	table3 = document.getElementById("myTablestep");
         
-    var row = table.insertRow(++tabrowindex);
+    var row = table3.insertRow(++tabrowindex3);
    
-    if (table.rows.length <= 50) {
+    if (table3.rows.length <= 50) {
         
          // Row increment
         for (var q = 0; q < 7; q++) {
 
             var cell = row.insertCell(q);
-            cell.innerHTML = arr[q];
+            cell.innerHTML = arr3[q];
 
     }
 
     }
-	var stdstv = parseFloat(arr[1]*arr[6]);
+	var stdstv = parseFloat(arr3[1]*arr3[6]);
 	
 	for(var t=0;t<=(2*stdstv);t++){
 	
-	yop[t] = parseFloat(parseFloat(arr[1]*arr[6])*parseFloat(1-Math.exp(-(parseFloat(t/arr[5])))));
+	yop[t] = parseFloat(parseFloat(arr3[1]*arr3[6])*parseFloat(1-Math.exp(-(parseFloat(t/arr3[5])))));
 	
 	dataOPPoints.push({x:(t), y:(yop[t])});
 	
@@ -760,9 +774,9 @@ document.getElementById('chartContainer').style.display  = "none";
  
  function Tableshow1(){
 	 
-	document.getElementById('myTable').style.display = "block";
-	document.getElementById('myTableload').style.display = "none";
-	document.getElementById('myTablestep').style.display = "none";
+	//document.getElementById('myTable').style.display = "block";
+	//document.getElementById('myTableload').style.display = "none";
+	//document.getElementById('myTablestep').style.display = "none";
 	document.getElementById('vchkspan').style.display = "none";
 	 document.getElementById('testchk').value = "1";
 	 
@@ -770,20 +784,20 @@ document.getElementById('chartContainer').style.display  = "none";
  
  function Tableshow2(){
 	 
-	document.getElementById('myTableload').style.display = "block";
+	//document.getElementById('myTableload').style.display = "block";
 	document.getElementById('vchkspan').style.display = "block";
-	document.getElementById('myTable').style.display = "none";
-	document.getElementById('myTablestep').style.display = "none";
+	//document.getElementById('myTable').style.display = "none";
+	//document.getElementById('myTablestep').style.display = "none";
 	 document.getElementById('testchk').value = "2";
 	 
  }
  
  function Tableshow3(){
 	 
-	document.getElementById('myTablestep').style.display = "block";
+	//document.getElementById('myTablestep').style.display = "block";
 	document.getElementById('vchkspan').style.display = "block";
-	document.getElementById('myTable').style.display = "none";
-	document.getElementById('myTableload').style.display = "none";
+	//document.getElementById('myTable').style.display = "none";
+	//document.getElementById('myTableload').style.display = "none";
 	 document.getElementById('testchk').value = "3";
 	 
  }

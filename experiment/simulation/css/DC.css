@@ -9,6 +9,11 @@
     position: relative;
 }
 
+
+
+
+
+
 #motor_arm_current{
     position: absolute;
     width: 12%;
@@ -125,8 +130,8 @@ tr:nth-child(odd) {
   }
    #bd5{
     position: absolute;
-    left: 44%;
-    bottom: 20%;
+    left: 74%;
+    bottom: 6%;
     padding: 4px;
 	
   }

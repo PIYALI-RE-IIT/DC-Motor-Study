@@ -76,7 +76,7 @@ jsPlumb.ready(function () {
 					
 			endpoint_oven = {
             anchor: [0.5, 0.5, 0, -1],
-            connectorStyle: { strokeWidth: 15, stroke: "grey" },
+            connectorStyle: { strokeWidth: 10, stroke: "grey" },
             endpointsOnTop: true,
             isSource: true,
             maxConnections: 1,
@@ -88,7 +88,23 @@ jsPlumb.ready(function () {
             initAnimation(elId);            			
 			
             return instance_black.addEndpoint(elId, endpoint_oven);
-					},		
+					},
+					
+					endpoint_oven2 = {
+            anchor: [0.5, 0.5, 0, -1],
+            connectorStyle: { strokeWidth: 15, stroke: "grey" },
+            endpointsOnTop: true,
+            isSource: true,
+            maxConnections: 1,
+            isTarget: true,
+            dropOptions: { tolerance: "touch", hoverClass: "dropHover" }
+        },
+
+		prepare_oven2 = function (elId) {
+            initAnimation(elId);            			
+			
+            return instance_black2.addEndpoint(elId, endpoint_oven2);
+					},					
 					
 
     // this is overridden by the YUI demo.
@@ -121,6 +137,15 @@ jsPlumb.ready(function () {
         Container: "canvas"
     });
 	
+	instance_black2 = jsPlumb.getInstance({
+        DragOptions: { cursor: 'wait', zIndex: 20 },
+        Endpoint: [ "Image", { url: "./images/ovendot.png" } ],
+        Connector: [ "Bezier", { curviness:80 } ],
+        Container: "canvas"
+    });
+	
+	
+	
 	/*jsPlumb.connect({ 
   sourceId:"bd3",
   targetId:"bd5",
@@ -142,7 +167,7 @@ jsPlumb.ready(function () {
 			e3 = prepare("bd3"),
             e4 = prepare("bd4"),
 			e5 = prepare_oven("bd5"),
-			e6 = prepare_oven("bd6");
+			e6 = prepare("bd6");
                        
            		
             /*clearBtn = jsPlumb.getSelector("#anim-clear"),
