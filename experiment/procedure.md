@@ -6,7 +6,7 @@
 </div>
 
 
-**Steps to perform the simuation**
+**Steps to perform the simulation**
 
 <b style="color:blue">Motor and Generator Characteristics</b>
 
