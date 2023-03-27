@@ -151,6 +151,11 @@ else if(document.getElementById('pon').src.match("./images/on.png")){
 	document.getElementById('motor_arm_voltage').style.color="#A6A6A7"; 
 	document.getElementById('motor_tau').style.color="#A6A6A7";
 	document.getElementById('motor_speed').style.color="#A6A6A7";
+	
+	document.getElementById('motor_arm_current').value = "0";
+	document.getElementById('motor_arm_voltage').value = "0";
+	document.getElementById('motor_tau').value = "0";
+	document.getElementById('motor_speed').value = "0"
 	 
  }
 
@@ -356,7 +361,7 @@ var mul = parseFloat(B + (Math.pow(Kb,2)/Ra));
 	
 Timeconst = parseFloat((J/mul)*1000);
 
-inertia = parseFloat(Timeconst* mul);	
+inertia = parseFloat((Timeconst/1000)* mul);	
 	
 if(document.getElementById('RL').value==0 && document.getElementById('mon').src.match('./images/on.png') && document.getElementById('rr').src.match('./images/on.png') ){
 	
@@ -825,19 +830,19 @@ document.getElementById('chartContainer').style.display  = "none";
  
  
  function Result(){
-	if( document.getElementById('testchk').value == 1){ 
+	if( document.getElementById('testchk').value == 1 && (document.getElementById('chartContainer').style.display == "block" || document.getElementById('chartContainer2').style.display == "block")){ 
 	 
 	 document.getElementById('result_noload').style.display = "block";
 	 
 	}
 	
-else if( document.getElementById('testchk').value == 2){ 
+else if( document.getElementById('testchk').value == 2 && document.getElementById('chartContainer3').style.display == "block"){ 
 	 
 	 document.getElementById('result_load').style.display = "block";
 	 
 	}
 	
-else if( document.getElementById('testchk').value == 3){ 
+else if( document.getElementById('testchk').value == 3 && document.getElementById('chartContainer4').style.display == "block"){ 
 	 
 	 document.getElementById('result_step').style.display = "block";
 	 	 

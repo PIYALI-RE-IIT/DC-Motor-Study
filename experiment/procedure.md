@@ -20,7 +20,7 @@
 					 
 3. Apply Ea through Knob1(start with 3v).Click on 'Simulate' button.Observe motor armature current(mA),Speed(rpm).Now click on the connected wire to delete that and connect 2-3 ,click on 'simulate'.Observe generated emf E<sub>g</sub>
 
-4. Click on 'Table' to take the observation data.Vary E<sub>a</sub> in small steps and follow the above steps for E<sub>a</sub>=3v to 12v.Click on 'Plot' then click on 'N Vs.E<sub>a</sub>',click on 'OK' again click on'E<sub>g</sub> Vs. N'.Now click on 'Result' button to find Motor Constant,Generator Constant.Click on 'OK'.
+4. Click on 'Table' to take the observation data.Vary E<sub>a</sub> in small steps and follow the above steps for E<sub>a</sub>=3v to 12v.Click on 'Plot' then click on 'N Vs.E<sub>a</sub>',again click on'E<sub>g</sub> Vs. N'.Now click on 'Result' button to find Motor Constant,Generator Constant.Click on 'OK'.
 
 5. Bring back all the knobs to initial position or zero value by clicking on 'minus' button on the knobs.Switch off the motor and circuit.						  
   
@@ -45,9 +45,9 @@ Follow the above steps for E<sub>a</sub>=8v,10v and 12v.Switch off the motor and
 
 3. Apply Ea through Knob1 and set E<sub>a</sub> to 8v.Click on 'Simulate' button.Observe motor armature current(mA),Speed(rpm).Now click on the connected wire to delete that and connect 2-3 ,click on 'simulate'.Observe generated emf E<sub>g</sub>
 						
-4. Connect 4-3 ,click on 'Simulate' to see	E<sub>s</sub> value in DVM.Set E<sub>s</sub> to 63.2% of E<sub>g</sub> measured above through knob2.</sub>
+4. delete connection 2-3 and connect 4-3 ,click on 'Simulate' to see	E<sub>s</sub> value in DVM.Set E<sub>s</sub> to 63.2% of E<sub>g</sub> measured above through knob2.</sub>
 						
-5. Switch ‘OFF’ the motor. Set ‘RESET’ switch to ‘READY’.Now switch the motor ‘ON’ and observe the 'Time Constant'.
+5. Switch ‘OFF’ the motor. Set ‘RESET’ switch to ‘READY’.Now switch the motor ‘ON’,click on 'Simulate' and observe the 'Time Constant'.
 					
 6. Click on 'Table' to take the observation data.Observe the Step Response.Now click on 'Result' button to
 find Motor Inertia and Transfer Function.Click on 'OK'. 
