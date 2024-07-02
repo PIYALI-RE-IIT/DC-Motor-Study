@@ -2,7 +2,7 @@
 #### Books
 
 1) Farid Golnaraghi, Benjamin C. Kuo - Automatic Control Systems (2009, Wiley)
-2) K. Ogata - Modern Control Engineering (2010, Prentice Hall)
+2) Katsuhiko Ogata - Modern Control Engineering (2010, Prentice Hall)
 3) Dr P S Bimbhra - Electrical Machinery (2011, Khanna Publishers)
 4) P. C. Sen - Principles of Electric Machines and Power Electronics (2013, Wiley)
 
